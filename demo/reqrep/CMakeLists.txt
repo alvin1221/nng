@@ -7,16 +7,15 @@
 # file was obtained (LICENSE.txt).  A copy of the license may also be
 # found online at https://opensource.org/licenses/MIT.
 
-cmake_minimum_required (VERSION 2.8.7)
+cmake_minimum_required (VERSION 2.8.8)
 
 project(reqrep)
 
 find_package(nng CONFIG REQUIRED)
-
-find_package(Threads)
-
+find_package((Threads))
 # Uncomment to enable ZeroTier transport
 # find_package(zerotiercore)
 
 add_executable(reqrep reqrep.c)
-target_link_libraries(reqrep nng::nng)
+target_link_libraries(reqrep nng)
+target_link_libraries(reqrep ${CMAKE_THREAD_LIBS_INIT} )

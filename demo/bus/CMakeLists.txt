@@ -9,12 +9,13 @@
 
 cmake_minimum_required (VERSION 2.8.8)
 
-project(rest)
+project(bus)
 
+# Call this from your own project's makefile.
 find_package(nng CONFIG REQUIRED)
 find_package(Threads)
 
-add_executable(rest-server server.c)
-target_link_libraries(rest-server nng)
-target_link_libraries(rest-server ${CMAKE_THREAD_LIBS_INIT} )
 
+add_executable(bus bus.c)
+target_link_libraries(bus nng)
+target_link_libraries(bus ${CMAKE_THREAD_LIBS_INIT} )

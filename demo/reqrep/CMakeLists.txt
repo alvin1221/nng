@@ -12,7 +12,7 @@ cmake_minimum_required (VERSION 2.8.8)
 project(reqrep)
 
 find_package(nng CONFIG REQUIRED)
-find_package((Threads))
+find_package(Threads)
 # Uncomment to enable ZeroTier transport
 # find_package(zerotiercore)
 
